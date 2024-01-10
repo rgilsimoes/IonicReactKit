@@ -29,3 +29,32 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
+public/docs/404.html
+public/docs/favicon.svg
+public/docs/index.html
+public/docs/types.d.ts
+public/docs/_astro/ec.sgewm.js
+public/docs/_astro/ec.usa2f.css
+public/docs/_astro/hoisted.CRqcumEg.js
+public/docs/_astro/index.C-oMbOxz.css
+public/docs/_astro/irsk_logo.Bx5olcUC_ZvvQqj.webp
+public/docs/_astro/page.CZ0TFQCk.js
+public/docs/_astro/Tabs.astro_astro_type_script_index_0_lang.BqK4QFew.js
+public/docs/_astro/ui-core.DclNgEhO.js
+public/docs/guide/toc.html
+public/docs/guide/why-irsk.html
+public/docs/pagefind/pagefind-entry.json
+public/docs/pagefind/pagefind-highlight.js
+public/docs/pagefind/pagefind-modular-ui.css
+public/docs/pagefind/pagefind-modular-ui.js
+public/docs/pagefind/pagefind-ui.css
+public/docs/pagefind/pagefind-ui.js
+public/docs/pagefind/pagefind.en_6f8f4f7f6b.pf_meta
+public/docs/pagefind/pagefind.js
+public/docs/pagefind/wasm.en.pagefind
+public/docs/pagefind/wasm.unknown.pagefind
+public/docs/pagefind/fragment/en_1e481ea.pf_fragment
+public/docs/pagefind/fragment/en_b895e85.pf_fragment
+public/docs/pagefind/fragment/en_ea304ee.pf_fragment
+public/docs/pagefind/index/en_ebb4ff4.pf_index
+.yarn/install-state.gz

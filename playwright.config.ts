@@ -1,4 +1,4 @@
-import { defineConfig, devices } from "@playwright/test";
+import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -10,9 +10,9 @@ import { defineConfig, devices } from "@playwright/test";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  outputDir: "./tests/results",
-  snapshotDir: "./tests/e2e/snapshots",
-  testDir: "./tests/e2e",
+  outputDir: './tests/results',
+  snapshotDir: './tests/e2e/snapshots',
+  testDir: './tests/e2e',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -23,15 +23,15 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ["html", { outputFolder: "./tests/playwright", printSteps: true }],
+    ['html', { outputFolder: './tests/playwright', printSteps: true }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: "http://127.0.0.1:8100",
+    baseURL: 'http://127.0.0.1:8100',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    trace: 'on-first-retry',
   },
 
   /* Configure projects for major browsers */
@@ -48,12 +48,12 @@ export default defineConfig({
 
     /* Test against mobile viewports. */
     {
-      name: "Mobile Chrome",
-      use: { ...devices["Pixel 6"] },
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 6'] },
     },
     {
-      name: "Mobile Safari",
-      use: { ...devices["iPhone 12"] },
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 12'] },
     },
 
     /* Test against branded browsers. */
@@ -69,8 +69,8 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: "npx ionic serve --no-open --external",
-    url: "http://127.0.0.1:8100",
+    command: 'npx ionic serve --no-open --external',
+    url: 'http://127.0.0.1:8100',
     reuseExistingServer: !process.env.CI,
   },
 });

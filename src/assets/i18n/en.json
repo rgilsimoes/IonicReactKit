@@ -1,0 +1,30 @@
+{
+  "about": {
+    "title": "About us"
+  },
+  "app": {
+    "loadingData": "Loading...",
+    "isOnline": "Online",
+    "isOffline": "Offline",
+    "title": "Ionic React Kit"
+  },
+  "settings": {
+    "LanguageLabel": "Language",
+    "languages": {
+      "en": "English",
+      "pt": "Portuguese"
+    }
+  },
+  "tabs": {
+    "about": "About",
+    "docs": "Docs",
+    "start": "Start",
+    "showcase": "Showcase"
+  },
+  "welcome": {
+    "checkShowIntroLabel": "Do not show again",
+    "continue": "CONTINUE",
+    "skipButton": "Skip",
+    "title": "Welcome"
+  }
+}

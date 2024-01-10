@@ -1,0 +1,30 @@
+.welcome {
+  .logo {
+    height: 6em;
+    padding: 1em;
+    will-change: filter;
+    transition: 0.75s;
+  }
+
+  .welcome-logo {
+    margin: 25px auto;
+    width: 60%;
+  }
+
+  .logo.vite {
+    filter: drop-shadow(0 0 1.5em #747bff);
+  }
+
+  .logo.react {
+    filter: drop-shadow(0 0 1.5em #444444);
+  }
+
+  .logo.ionic {
+    filter: drop-shadow(0 0 1.5em #0a00c7);
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+  }
+}

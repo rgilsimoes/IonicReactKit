@@ -1,60 +1,78 @@
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
-  IonIcon,
-  IonLabel,
   IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
+  getPlatforms,
   setupIonicReact,
-} from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
-import { ellipse, square, triangle } from "ionicons/icons";
-import Tab1 from "./pages/Tab1";
-import Tab2 from "./pages/Tab2";
-import Tab3 from "./pages/Tab3";
+} from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+import WebFont from 'webfontloader';
 
 /* Core CSS required for Ionic components to work properly */
-import "./global.css";
+import './global.scss';
+
+/* Main Components */
+import i18n from '@utils/i18n';
+import * as StatusBar from '@utils/StatusBar';
+import { logger } from '@utils/Logger';
+import { RouteName } from '@utils/RouteName';
+import { rehydrateStores, subscribeStores } from '@store/store';
+
+import Welcome from '@pages/welcome/Welcome';
+import Tabs from '@components/tabs/Tabs';
+import { CAPACITOR_PLATFORM, isValidPlatform } from '@utils/Utils';
+import { getCurrentNetworkStatus } from '@utils/Network';
+import { Actions } from '@store/AppStore';
+
+logger.warn('Init: Running in mode:', import.meta.env.MODE);
+logger.warn('Platform is: ', getPlatforms());
 
 setupIonicReact();
+// * Init Stores
+rehydrateStores().then(() => {
+  subscribeStores();
+});
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
+const App: React.FC = () => {
+  // * Set status bar
+  if (isValidPlatform(CAPACITOR_PLATFORM)) {
+    StatusBar.setStatusBarStyleLight();
+    StatusBar.showStatusBar();
+    StatusBar.initAndroid();
+  }
+
+  // * Preload Fonts
+  WebFont.load({
+    custom: {
+      families: ['Signika', 'Pacifico'],
+    },
+  });
+
+  // * Set Language
+  i18n.changeLanguage(i18n.language);
+
+  // * Check current network status
+  getCurrentNetworkStatus().then((status) => {
+    Actions.setIsOnline(status.connected);
+  });
+
+  return (
+    <IonApp>
+      <IonReactRouter>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route path={RouteName.WELCOME} exact>
+            <Welcome />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route path={RouteName.TABS}>
+            <Tabs />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
+          <Route path='/' exact>
+            <Redirect to={RouteName.WELCOME} />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon aria-hidden="true" icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon aria-hidden="true" icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon aria-hidden="true" icon={square} />
-            <IonLabel>Tab 3</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;

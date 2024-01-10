@@ -1,11 +1,11 @@
-import { CapacitorConfig } from "@capacitor/cli";
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: "pt.hometech.ionicReactKit",
-  appName: "IonicReactKit",
-  webDir: "dist",
+  appId: 'pt.hometech.ionicReactKit',
+  appName: 'IonicReactKit',
+  webDir: 'dist',
   server: {
-    androidScheme: "https",
+    androidScheme: 'https',
   },
 };
 

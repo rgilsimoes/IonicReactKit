@@ -1,0 +1,99 @@
+/** Custom App Colors **/
+
+:root {
+  /** Head over to https://coolors.co/000000-bdd3e1-678196-334b62-e87d02 **/
+  /* CSS HEX */
+  --black: #000000ff;
+  --columbia-blue: #bdd3e1ff;
+  --slate-gray: #678196ff;
+  --charcoal: #334b62ff;
+  --tangerine: #e87d02ff;
+
+  /* CSS HSL */
+  --black: hsla(0, 0%, 0%, 1);
+  --columbia-blue: hsla(203, 37%, 81%, 1);
+  --slate-gray: hsla(207, 19%, 50%, 1);
+  --charcoal: hsla(209, 32%, 29%, 1);
+  --tangerine: hsla(32, 98%, 46%, 1);
+
+  /** Genereate Color Vars with https://ionicframework.com/docs/theming/color-generator **/
+  /** You can replace primary, scondary, and so on if you like **/
+
+  --ion-color-columbia-blue: #bdd3e1ff;
+  --ion-color-columbia-blue-rgb: 189, 211, 225;
+  --ion-color-columbia-blue-contrast: #000000;
+  --ion-color-columbia-blue-contrast-rgb: 0, 0, 0;
+  --ion-color-columbia-blue-shade: #a6bac6;
+  --ion-color-columbia-blue-tint: #c4d7e4;
+
+  --ion-color-slate-gray: #678196;
+  --ion-color-slate-gray-rgb: 103, 129, 150;
+  --ion-color-slate-gray-contrast: #000000;
+  --ion-color-slate-gray-contrast-rgb: 0, 0, 0;
+  --ion-color-slate-gray-shade: #5b7284;
+  --ion-color-slate-gray-tint: #768ea1;
+
+  --ion-color-charcoal: #334b62ff;
+  --ion-color-charcoal-rgb: 75, 98, 255;
+  --ion-color-charcoal-contrast: #ffffff;
+  --ion-color-charcoal-contrast-rgb: 255, 255, 255;
+  --ion-color-charcoal-shade: #4256e0;
+  --ion-color-charcoal-tint: #5d72ff;
+
+  --ion-color-tangerine: #e87d02ff;
+  --ion-color-tangerine-rgb: 125, 2, 255;
+  --ion-color-tangerine-contrast: #ffffff;
+  --ion-color-tangerine-contrast-rgb: 255, 255, 255;
+  --ion-color-tangerine-shade: #6e02e0;
+  --ion-color-tangerine-tint: #8a1bff;
+}
+
+/** Color names for inline usage
+
+Just duplicate and replace <color-name> with the name you want
+
+.ion-color-<color-name> {
+  --ion-color-base: var(--ion-color-<color-name>);
+  --ion-color-base-rgb: var(--ion-color-<color-name>-rgb);
+  --ion-color-contrast: var(--ion-color-<color-name>);
+  --ion-color-contrast-rgb: var(--ion-color-<color-name>-contrast-rgb);
+  --ion-color-shade: var(--ion-color-<color-name>-shade);
+  --ion-color-tint: var(--ion-color-<color-name>-tint);
+}
+**/
+
+.ion-color-columbia-blue {
+  --ion-color-base: var(--ion-color-columbia-blue);
+  --ion-color-base-rgb: var(--ion-color-columbia-blue-rgb);
+  --ion-color-contrast: var(--ion-color-columbia-blue-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-columbia-blue-contrast-rgb);
+  --ion-color-shade: var(--ion-color-columbia-blue-shade);
+  --ion-color-tint: var(--ion-color-columbia-blue-tint);
+}
+
+.ion-color-slate-gray {
+  --ion-color-base: var(--ion-color-slate-gray);
+  --ion-color-base-rgb: var(--ion-color-slate-gray-rgb);
+  --ion-color-contrast: var(--ion-color-slate-gray-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-slate-gray-contrast-rgb);
+  --ion-color-shade: var(--ion-color-slate-gray-shade);
+  --ion-color-tint: var(--ion-color-slate-gray-tint);
+}
+
+.ion-color-charcoal {
+  --ion-color-base: var(--ion-color-charcoal);
+  --ion-color-base-rgb: var(--ion-color-charcoal-rgb);
+  --ion-color-contrast: var(--ion-color-charcoal-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-charcoal-contrast-rgb);
+  --ion-color-shade: var(--ion-color-charcoal-shade);
+  --ion-color-tint: var(--ion-color-charcoal-tint);
+}
+
+.ion-color-tangerine {
+  --ion-color-base: var(--ion-color-tangerine);
+  --ion-color-base-rgb: var(--ion-color-tangerine-rgb);
+  --ion-color-contrast: var(--ion-color-tangerine-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-tangerine-contrast-rgb);
+  --ion-color-shade: var(--ion-color-tangerine-shade);
+  --ion-color-tint: var(--ion-color-tangerine-tint);
+}

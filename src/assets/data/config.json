@@ -1,0 +1,9 @@
+{
+  "CONFIG1": "Config value",
+  "FEATURES": {
+    "FEATURE1": true,
+    "FEATURE2": true,
+    "FEATURE3": true
+  },
+  "CONFIG2": "enum_value1"
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "config.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CONFIG1": {
+      "type": "string"
+    },
+    "FEATURES": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FEATURE1": {
+          "type": "boolean"
+        },
+        "FEATURE2": {
+          "type": "boolean"
+        },
+        "FEATURE3": {
+          "type": "boolean"
+        }
+      }
+    },
+    "CONFIG2": {
+      "type": "string",
+      "enum": ["enum_value1", "enum_value2"]
+    }
+  },
+  "required": ["CONFIG1", "FEATURES", "CONFIG2"]
+}

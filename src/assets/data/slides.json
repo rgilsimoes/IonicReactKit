@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "image": "/slides/img-1.jpg",
+    "title": "Welcome to Ionic React Starter Kit",
+    "description": "Your best development stack",
+    "last": false
+  },
+  {
+    "id": 2,
+    "image": "/slides/img-2.jpg",
+    "title": "Fast and Easy",
+    "description": "Get started in no time with most of the pain out of the way",
+    "last": false
+  },
+  {
+    "id": 3,
+    "image": "/slides/img-3.jpg",
+    "title": "Powerful and Friendly",
+    "description": "The best DX tools and eXperience",
+    "last": true
+  }
+]
