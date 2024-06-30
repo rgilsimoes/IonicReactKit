@@ -3,9 +3,9 @@
     "title": "About us"
   },
   "app": {
-    "loadingData": "Loading...",
-    "isOnline": "Online",
     "isOffline": "Offline",
+    "isOnline": "Online",
+    "loadingData": "Loading...",
     "title": "Ionic React Kit"
   },
   "settings": {
@@ -15,11 +15,14 @@
       "pt": "Portuguese"
     }
   },
+  "showcase": {
+    "title": "Showcase"
+  },
   "tabs": {
     "about": "About",
     "docs": "Docs",
-    "start": "Start",
-    "showcase": "Showcase"
+    "showcase": "Showcase",
+    "start": "Start"
   },
   "welcome": {
     "checkShowIntroLabel": "Do not show again",

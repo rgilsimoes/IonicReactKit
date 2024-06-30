@@ -1,0 +1,42 @@
+.showcase-page {
+
+  ion-content {
+    --background: var(--ion-color-columbia-blue);
+  }
+
+  ion-list {
+    background-color: var(--ion-color-slate-gray)
+  }
+
+  h3 {
+    padding-left: 20px;
+    color: var(--ion-color-light);
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+  }
+}
+
+.showCaseItem {
+  --border-radius: 10px;
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --padding-top: 1rem;
+  --padding-bottom: 1rem;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-height: 5rem;
+
+  ion-label {
+    padding-left: 1.2rem;
+
+    h2 {
+      font-weight: 600;
+      letter-spacing: -0.02rem;
+    }
+
+    p {
+      letter-spacing: -0.03rem;
+    }
+  }
+}

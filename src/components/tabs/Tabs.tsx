@@ -18,6 +18,7 @@ import { RouteName } from '@utils/RouteName';
 
 // Pages
 import StartPage from '@pages/start/StartPage';
+import ShowCasePage from '@pages/showcase/ShowCase';
 import DocsPage from '@pages/docs/DocsPage';
 import AboutPage from '@pages/about/AboutPage';
 
@@ -37,6 +38,9 @@ const Tabs: React.FC = () => {
       <IonRouterOutlet>
         <Route exact path={RouteName.START}>
           <StartPage />
+        </Route>
+        <Route exact path={RouteName.SHOWCASE}>
+          <ShowCasePage />
         </Route>
         <Route exact path={RouteName.DOCS}>
           <DocsPage />

@@ -3,8 +3,8 @@
     "title": "Acerca"
   },
   "app": {
-    "isOnline": "Ligado",
     "isOffline": "Desligado",
+    "isOnline": "Ligado",
     "title": "Ionic React Kit"
   },
   "settings": {
@@ -14,14 +14,17 @@
       "pt": "Português"
     }
   },
+  "showcase": {
+    "title": "Exemplos"
+  },
   "start": {
     "title": "Início"
   },
   "tabs": {
     "about": "Acerca",
     "docs": "Manuais",
-    "start": "Início",
-    "showcase": "Exemplos"
+    "showcase": "Exemplos",
+    "start": "Início"
   },
   "welcome": {
     "checkShowIntroLabel": "Não voltar a mostrar",
