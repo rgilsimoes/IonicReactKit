@@ -4,7 +4,8 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+// import dotenv from 'dotenv';
+// dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -42,17 +43,22 @@ export default defineConfig({
     // },
 
     // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+
+    // {
     //   name: 'webkit',
     //   use: { ...devices['Desktop Safari'] },
     // },
 
     /* Test against mobile viewports. */
     {
-      name: 'Mobile Chrome',
+      name: 'Mobile Chrome Pixel 6',
       use: { ...devices['Pixel 6'] },
     },
     {
-      name: 'Mobile Safari',
+      name: 'Mobile Safari iPhone 12',
       use: { ...devices['iPhone 12'] },
     },
 
@@ -69,7 +75,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npx ionic serve --no-open --external',
+    command: 'yarn exec vite --open --host=0.0.0.0 --port=8100',
     url: 'http://127.0.0.1:8100',
     reuseExistingServer: !process.env.CI,
   },

@@ -25,6 +25,7 @@ export default defineConfig((env) => ({
   ],
   test: {
     globals: true,
+    include: ['./src/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     environment: 'jsdom',
     setupFiles: './tests/setuptests.ts',
     reporters: ['default', 'html'],
