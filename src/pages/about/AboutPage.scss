@@ -2,4 +2,10 @@
   ion-content {
     --ion-background-color: var(--ion-color-columbia-blue);
   }
+
+  .about-content {
+    ul > li {
+      margin-bottom: 0.5rem;
+    }
+  }
 }

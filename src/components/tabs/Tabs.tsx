@@ -21,6 +21,7 @@ import StartPage from '@pages/start/StartPage';
 import ShowCasePage from '@pages/showcase/ShowCase';
 import DocsPage from '@pages/docs/DocsPage';
 import AboutPage from '@pages/about/AboutPage';
+import NativePage from '@pages/showcase/Native';
 
 /**
  * Renders a Tabs component that displays a tabbed navigation interface.
@@ -41,6 +42,9 @@ const Tabs: React.FC = () => {
         </Route>
         <Route exact path={RouteName.SHOWCASE}>
           <ShowCasePage />
+        </Route>
+        <Route exact path={RouteName.SC_NATIVE}>
+          <NativePage />
         </Route>
         <Route exact path={RouteName.DOCS}>
           <DocsPage />

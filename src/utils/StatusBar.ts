@@ -6,7 +6,7 @@ import { getPlatforms } from '@ionic/react';
 
 App.addListener('appStateChange', ({ isActive }) => {
   // state.isActive contains the active state
-  isActive && initAndroid();
+  if (isActive) initAndroid();
 });
 
 // iOS only
@@ -56,7 +56,7 @@ const showStatusBar = async (): Promise<void> => {
 const initAndroid = async (): Promise<void> => {
   // Display content under transparent status bar (Android only)
   const isAndroid = getPlatforms().includes('android');
-  isAndroid && (await StatusBar.setOverlaysWebView({ overlay: true }));
+  if (isAndroid) await StatusBar.setOverlaysWebView({ overlay: true });
 };
 
 export {

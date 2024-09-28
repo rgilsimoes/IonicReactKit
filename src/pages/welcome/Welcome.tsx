@@ -103,20 +103,20 @@ const Welcome: React.FC = () => {
           ))}
         </Swiper>
         {lastSlide && (
-          <IonGrid class='ion-padding'>
-            <IonRow class='ion-justify-content-center ion-no-margin'>
+          <IonGrid className='ion-padding'>
+            <IonRow className='ion-justify-content-center ion-no-margin'>
               <IonCol size='6'>
                 <IonCheckbox
                   labelPlacement='start'
                   color='primary'
-                  class='check-show-intro'
+                  className='check-show-intro'
                 >
                   {t('welcome.checkShowIntroLabel')}
                 </IonCheckbox>
               </IonCol>
             </IonRow>
 
-            <IonRow class='ion-justify-content-center ion-no-margin'>
+            <IonRow className='ion-justify-content-center ion-no-margin'>
               <IonCol size='5'>
                 <IonButton
                   fill='outline'

@@ -17,6 +17,9 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'max-len': ['warn', { code: 120, ignoreComments: true }],
+    'max-lines': ['warn', { max: 500, skipComments: true }],
+    'max-lines': ['error', { max: 1000, skipComments: false }],
     'arrow-body-style': ['warn', 'as-needed'],
     'react/jsx-uses-vars': 'error',
     'react/react-in-jsx-scope': 'off',

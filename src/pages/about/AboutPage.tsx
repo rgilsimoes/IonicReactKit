@@ -27,7 +27,7 @@ const AboutPage: React.FC = () => (
           <IonTitle size='large'>{t('about.title')}</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <div className='about-content'>
+      <div className='about-content ion-padding'>
         <h2>{t('about.brief')}</h2>
         <p>{t('about.description')}</p>
         <a href='https://github.com/hometech/pt.hometech.ionicreactkit'>

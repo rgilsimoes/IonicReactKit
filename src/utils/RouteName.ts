@@ -16,4 +16,5 @@ export const RouteName = {
   ABOUT: '/tabs/about',
   //----------------
   //... add other routes
+  SC_NATIVE: '/tabs/showcase/native',
 };
