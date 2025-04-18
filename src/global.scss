@@ -1,4 +1,16 @@
 /*
+ * App CSS
+ * ----------------------------------------------------------------------------
+ * Imports a file that can contain Sass/CSS that should be used throughout
+ * the entire app.
+ */
+
+@use 'theme/variables.scss';
+@use 'theme/fonts.scss';
+@use 'theme/colors.scss';
+@use 'theme/app.scss';
+
+/*
  * App Global CSS
  * ----------------------------------------------------------------------------
  * Put style rules here that you want to apply globally. These styles are for
@@ -24,15 +36,3 @@
 @import '@ionic/react/css/text-alignment.css';
 @import '@ionic/react/css/text-transformation.css';
 @import '@ionic/react/css/flex-utils.css';
-
-/*
- * App CSS
- * ----------------------------------------------------------------------------
- * Imports a file that can contain Sass/CSS that should be used throughout
- * the entire app.
- */
-
-@import 'theme/variables.scss';
-@import 'theme/fonts.scss';
-@import 'theme/colors.scss';
-@import 'theme/app.scss';

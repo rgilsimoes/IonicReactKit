@@ -11,12 +11,13 @@ import {
   IonToolbar,
 } from '@ionic/react';
 
-import './ShowCase.scss';
-import { t } from 'i18next';
+import { logger } from '@utils/Logger';
 import { RouteName } from '@utils/RouteName';
+import { t } from 'i18next';
+import './ShowCase.scss';
 
 const ShowCasePage: React.FC = () => {
-  console.log('Test');
+  logger.log('Test');
 
   return (
     <IonPage className='showcase-page'>

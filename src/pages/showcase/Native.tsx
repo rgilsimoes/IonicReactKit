@@ -13,13 +13,14 @@ import {
   IonToolbar,
 } from '@ionic/react';
 
-import './ShowCase.scss';
-import { t } from 'i18next';
 import { clearAppBadge, setAppBadge } from '@utils/Badge';
+import { logger } from '@utils/Logger';
+import { t } from 'i18next';
 import { useState } from 'react';
+import './ShowCase.scss';
 
 const NativePage: React.FC = () => {
-  console.log('Test');
+  logger.log('Test');
 
   const [badgeCounter, setBadgeCounter] = useState(0);
 
