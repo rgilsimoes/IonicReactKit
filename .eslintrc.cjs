@@ -25,7 +25,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/self-closing-comp': ['error', { component: true, html: true }],
     'react-hooks/exhaustive-deps': 'off',
-    'react-refresh/only-export-components': 'warn',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/explicit-function-return-type': 'error',
   },
