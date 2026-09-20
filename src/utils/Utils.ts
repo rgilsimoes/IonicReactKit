@@ -1,7 +1,7 @@
 import _ from 'underscore';
 import { getPlatforms } from '@ionic/react';
 import { logger } from './Logger';
-import { NavigationBar } from '@hugotomazi/capacitor-navigation-bar';
+import { NavigationBar, Style } from '@capawesome/capacitor-navigation-bar';
 import config from '@assets/data/config.json';
 
 /**
@@ -58,19 +58,24 @@ export default class Utils {
    * Sets the color of the navigation bar.
    *
    * @param {string} color - The color to set for the navigation bar.
-   * @param {boolean} dark - (Optional) Whether the navigation bar buttons should be dark.
+   * @param {boolean} darkButtons - (Optional) Whether the navigation bar buttons should be dark.
    * @return {void}
    */
-  public static setNavigationBarColor(color: string, dark?: boolean): void {
+  public static setNavigationBarColor(
+    color: string,
+    darkButtons?: boolean,
+  ): void {
     if (
       isValidPlatform(CAPACITOR_PLATFORM) &&
       !getPlatforms().includes('ios')
     ) {
       logger.log('Setting Navigation bar color to:', color);
-      NavigationBar.setColor({
-        color: color,
-        darkButtons: dark ?? false,
-      });
+      void Promise.all([
+        NavigationBar.setColor({ color }),
+        NavigationBar.setStyle({
+          style: darkButtons ? Style.Light : Style.Dark,
+        }),
+      ]);
     }
   }
 }

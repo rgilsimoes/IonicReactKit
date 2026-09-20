@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Navigate, Route } from 'react-router-dom';
 import {
   IonApp,
   IonRouterOutlet,
@@ -60,15 +60,12 @@ const App: React.FC = () => {
     <IonApp>
       <IonReactRouter>
         <IonRouterOutlet>
-          <Route path={RouteName.WELCOME} exact>
-            <Welcome />
-          </Route>
-          <Route path={RouteName.TABS}>
-            <Tabs />
-          </Route>
-          <Route path='/' exact>
-            <Redirect to={RouteName.WELCOME} />
-          </Route>
+          <Route path={RouteName.WELCOME} element={<Welcome />} />
+          <Route path={`${RouteName.TABS}/*`} element={<Tabs />} />
+          <Route
+            path='/'
+            element={<Navigate to={RouteName.WELCOME} replace />}
+          />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>

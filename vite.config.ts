@@ -1,14 +1,28 @@
 /// <reference types="vitest" />
 /// <reference types="vitest/coverage" />
-import { defineConfig } from 'vite';
+import { createLogger, defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import eslint from 'vite-plugin-eslint';
 import path from 'path';
 import deadFile from 'vite-plugin-deadfile';
 
+const logger = createLogger();
+const warn = logger.warn;
+
+logger.warn = (message, options) => {
+  const isIonicHostContextWarning =
+    message.includes('[lightningcss minify]') &&
+    message.includes("'host-context' is not recognized");
+
+  if (!isIonicHostContextWarning) {
+    warn(message, options);
+  }
+};
+
 // https://vitejs.dev/config/
 /** @type {import('vite').UserConfig} */
 export default defineConfig((env) => ({
+  customLogger: logger,
   plugins: [
     react(),
     env.mode !== 'test' && eslint(),
@@ -43,14 +57,14 @@ export default defineConfig((env) => ({
   },
   resolve: {
     alias: {
-      '@components': path.resolve(__dirname, './src/components'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@hooks': path.resolve(__dirname, './src/hooks'),
-      '@services': path.resolve(__dirname, './src/services'),
-      '@store': path.resolve(__dirname, './src/store'),
-      '@utils': path.resolve(__dirname, './src/utils'),
-      '@models': path.resolve(__dirname, './src/types'),
-      '@assets': path.resolve(__dirname, './src/assets'),
+      '@components': path.resolve(import.meta.dirname, './src/components'),
+      '@pages': path.resolve(import.meta.dirname, './src/pages'),
+      '@hooks': path.resolve(import.meta.dirname, './src/hooks'),
+      '@services': path.resolve(import.meta.dirname, './src/services'),
+      '@store': path.resolve(import.meta.dirname, './src/store'),
+      '@utils': path.resolve(import.meta.dirname, './src/utils'),
+      '@models': path.resolve(import.meta.dirname, './src/types'),
+      '@assets': path.resolve(import.meta.dirname, './src/assets'),
     },
   },
   css: {

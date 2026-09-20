@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router';
+import { Navigate, Route } from 'react-router-dom';
 import { t } from 'i18next';
 import {
   IonIcon,
@@ -29,7 +29,7 @@ import NativePage from '@pages/showcase/Native';
  * @return ReactElement The rendered Tabs component.
  */
 const Tabs: React.FC = () => {
-  Utils.setNavigationBarColor('charcoal', true);
+  Utils.setNavigationBarColor('#334b62', true);
 
   const location = useIonRouter();
   logger.log('Location:', location.routeInfo.pathname);
@@ -37,24 +37,13 @@ const Tabs: React.FC = () => {
   return (
     <IonTabs>
       <IonRouterOutlet>
-        <Route exact path={RouteName.START}>
-          <StartPage />
-        </Route>
-        <Route exact path={RouteName.SHOWCASE}>
-          <ShowCasePage />
-        </Route>
-        <Route exact path={RouteName.SC_NATIVE}>
-          <NativePage />
-        </Route>
-        <Route exact path={RouteName.DOCS}>
-          <DocsPage />
-        </Route>
-        <Route exact path={RouteName.ABOUT}>
-          <AboutPage />
-        </Route>
-        <Route path=''>
-          <Redirect to={RouteName.START} />
-        </Route>
+        <Route path='start' element={<StartPage />} />
+        <Route path='showcase' element={<ShowCasePage />} />
+        <Route path='showcase/native' element={<NativePage />} />
+        <Route path='docs' element={<DocsPage />} />
+        <Route path='about' element={<AboutPage />} />
+        <Route index element={<Navigate to={RouteName.START} replace />} />
+        <Route path='*' element={<Navigate to={RouteName.START} replace />} />
       </IonRouterOutlet>
       <IonTabBar slot='bottom'>
         <IonTabButton tab='tab1' href={RouteName.START}>

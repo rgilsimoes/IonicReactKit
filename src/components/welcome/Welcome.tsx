@@ -1,4 +1,4 @@
-import { IonCol, IonGrid, IonImg, IonRow, IonText } from '@ionic/react';
+import { IonCol, IonGrid, IonRow, IonText } from '@ionic/react';
 import './Welcome.scss';
 
 const Welcome: React.FC = () => (
@@ -6,10 +6,12 @@ const Welcome: React.FC = () => (
     <IonText className='ion-text-center' color='secondary'>
       <h1>Welcome!</h1>
     </IonText>
-    <IonImg
+    <img
       src='/src/assets/img/irsk_logo.png'
       alt='IRSK logo'
       className='welcome-logo'
+      loading='lazy'
+      decoding='async'
     />
 
     <IonGrid className='ion-text-center'>
