@@ -1,6 +1,5 @@
-/// <reference types="vitest" />
-/// <reference types="vitest/coverage" />
-import { createLogger, defineConfig } from 'vite';
+import { createLogger } from 'vite';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import eslint from 'vite-plugin-eslint';
 import path from 'path';
@@ -30,6 +29,7 @@ export default defineConfig((env) => ({
       root: 'src',
       exclude: [
         '**/*.test.*',
+        'test/**',
         '**/*.http',
         'assets/**',
         '**/*.d.ts',
@@ -41,12 +41,10 @@ export default defineConfig((env) => ({
     globals: true,
     include: ['./src/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     environment: 'jsdom',
-    setupFiles: './tests/setuptests.ts',
-    reporters: ['default', 'html'],
-    outputFile: './tests/vitest-report.html',
+    setupFiles: './src/test/setup.ts',
+    reporters: ['default', ['html', { outputDir: '.vitest' }]],
     css: true,
     coverage: {
-      enabled: true,
       provider: 'istanbul', // or 'v8'
       reportsDirectory: './tests/coverage',
     },

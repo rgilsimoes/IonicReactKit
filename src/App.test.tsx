@@ -1,10 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { render } from './utils/TestUtils';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
 describe('Render App', () => {
-  it('renders App element without crashing', async () => {
-    const { baseElement } = render(<App />);
-    expect(baseElement).toBeDefined();
+  it('renders the welcome route', async () => {
+    render(<App />);
+
+    expect(
+      await screen.findByRole('heading', {
+        name: 'Welcome to Ionic React Starter Kit',
+      }),
+    ).toBeInTheDocument();
   });
 });

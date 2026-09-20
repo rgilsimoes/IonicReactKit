@@ -1,20 +1,16 @@
-import { describe, expect, test } from 'vitest';
+import { beforeEach, describe, expect, test } from 'vitest';
 import { Actions, AppStore, Selectors } from './AppStore';
 
-describe('Saving and Loading State', () => {
-  const mockState = AppStore.getRawState();
+describe('AppStore', () => {
+  beforeEach(() => {
+    Actions.setSkipIntro(false);
+  });
 
-  test('getSkipShowIntro should be set correctly', () => {
-    console.log('Initial State:', mockState);
-    // ----------------------------
-    expect(
-      Selectors.getSkipShowIntro(mockState),
-      'should be false',
-    ).toBeFalsy();
-    Actions.setSkipIntro(!mockState.skipIntro);
-    const newState = AppStore.getRawState();
-    expect(Selectors.getSkipShowIntro(newState), 'should be true').toBeTruthy();
-    // ----------------------------
-    console.log('Changed State:', newState);
+  test('updates the skip-intro preference', () => {
+    expect(Selectors.getSkipShowIntro(AppStore.getRawState())).toBe(false);
+
+    Actions.setSkipIntro(true);
+
+    expect(Selectors.getSkipShowIntro(AppStore.getRawState())).toBe(true);
   });
 });
