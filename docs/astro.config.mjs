@@ -12,14 +12,22 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Ionic React Starter Kit',
-			social: {
-				github: 'https://github.com/rgilsimoes/IonicReactKit',
-				twitter: 'https://www.twitter.com/rykhard'
-			},
+			social: [
+				{
+					icon: 'github',
+					label: 'GitHub',
+					href: 'https://github.com/rgilsimoes/IonicReactKit',
+				},
+				{
+					icon: 'twitter',
+					label: 'Twitter',
+					href: 'https://www.twitter.com/rykhard',
+				},
+			],
 			sidebar: [
 				{
 					label: 'Starter Kit',
-					autogenerate: { directory: 'guide' },
+					items: [{ autogenerate: { directory: 'guide' } }],
 				},
 			],
 		}),

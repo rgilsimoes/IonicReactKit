@@ -41,7 +41,7 @@ description: A guide to taking the best of this Starter Kit.
 
     * Forms with React Hook Forms
 
-    * [Internationalization with i18next](/docs/guide/54-i18n.md)
+    * [Internationalization with i18next](/docs/guide/54-i18n.html)
 
     * SwiperJS Slide Library
 
